@@ -4,7 +4,7 @@ body, html {
 }
 
 .container {
-    background-color: aquamarine;
+    background-color: whitesmoke;
     display: flex;
     justify-content: stretch;
     height: 100%;
@@ -25,9 +25,8 @@ body, html {
     flex: 1;
 }
 
-.column:nth-child(odd) .square:nth-child(odd) {
-    background: aqua;
-}
-.column:nth-child(even) .square:nth-child(even) {
-    background: aqua;
+.column:nth-child(odd) .square:nth-child(odd),
+.column:nth-child(even) .square:nth-child(even)
+ {
+    background: antiquewhite;
 }
