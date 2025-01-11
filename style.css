@@ -1,0 +1,33 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+}
+
+.container {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: stretch;
+    height: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    flex: 1;
+}
+
+/* .column:nth-child(odd) {
+    background: aqua;
+} */
+
+.square {
+    flex: 1;
+}
+
+.column:nth-child(odd) .square:nth-child(odd) {
+    background: aqua;
+}
+.column:nth-child(even) .square:nth-child(even) {
+    background: aqua;
+}
