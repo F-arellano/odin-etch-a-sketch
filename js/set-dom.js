@@ -19,3 +19,12 @@ export function setGrid() {
         container.appendChild(gridCol)
     }
 }
+
+export function addButtons() {
+    const button = document.createElement("button")
+    const firstSquare = document.querySelector(".column:nth-child(1) .square:nth-child(1)")
+
+    button.classList.add("reset")
+    button.textContent = "⟲"
+    firstSquare.appendChild(button)
+}
