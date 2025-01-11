@@ -10,4 +10,4 @@ const container = document.querySelector(".container");
 container.addEventListener("mouseover", changeColorHoverSquare, false);
 
 const resetButton = document.querySelector(".reset")
-container.addEventListener("click", resetGrid);
+resetButton.addEventListener("click", resetGrid);

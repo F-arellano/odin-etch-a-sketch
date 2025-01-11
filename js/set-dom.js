@@ -21,10 +21,19 @@ export function setGrid() {
 }
 
 export function addButtons() {
-    const button = document.createElement("button")
-    const firstSquare = document.querySelector(".column:nth-child(1) .square:nth-child(1)")
+    const resetButton = document.createElement("button")
+    const newGridButton = document.createElement("button")
 
-    button.classList.add("reset")
-    button.textContent = "⟲"
-    firstSquare.appendChild(button)
+    const firstSquare = document.querySelector(".column:nth-child(1) .square:nth-child(1)")
+    const secondSquare = document.querySelector(".column:nth-child(2) .square:nth-child(1)")
+
+    resetButton.classList.add("reset")
+    resetButton.textContent = "⟲"
+
+    newGridButton.classList.add("new-grid")
+    newGridButton.textContent = "±"
+
+
+    firstSquare.appendChild(resetButton)
+    secondSquare.appendChild(newGridButton)
 }
