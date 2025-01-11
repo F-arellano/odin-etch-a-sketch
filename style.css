@@ -32,11 +32,18 @@ body, html {
 }
 
 button {
-    height: 100%;
-    width: 100%;
+    margin: 15px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     border: 1px solid black;
     font-size: 24px;
     padding: 0px;
     background: white;
+}
+
+.button-list {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
