@@ -1,9 +1,14 @@
-export function setGrid() {
+import { changeColorHoverSquare } from './events.js';
+
+let row = 16
+let col = 32
+
+function setGrid(n = 16) {
     console.log("setting grid")
     const container = document.querySelector(".container")
 
-    const row = 16
-    const col = 32
+    row = n
+    col = n * 2
 
     // create columns of grid
     for (let i=0; i < col; i++) {
@@ -18,9 +23,30 @@ export function setGrid() {
         }
         container.appendChild(gridCol)
     }
+
+    container.addEventListener("mouseover", changeColorHoverSquare, false)
+    addButtons()
 }
 
-export function addButtons() {
+function deleteGrid() {
+    const container = document.querySelector(".container")
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
+}
+
+function updateGrid() {
+    let rowNumber = prompt("how many rows do you want?")
+    deleteGrid()
+    setGrid(rowNumber)
+}
+
+function resetGrid() {
+    deleteGrid()
+    setGrid(row)
+}
+
+function addButtons() {
     const resetButton = document.createElement("button")
     const newGridButton = document.createElement("button")
 
@@ -30,10 +56,20 @@ export function addButtons() {
     resetButton.classList.add("reset")
     resetButton.textContent = "⟲"
 
-    newGridButton.classList.add("new-grid")
+    newGridButton.classList.add("update")
     newGridButton.textContent = "±"
 
+    resetButton.addEventListener("click", resetGrid)
+    newGridButton.addEventListener("click", updateGrid)
 
     firstSquare.appendChild(resetButton)
     secondSquare.appendChild(newGridButton)
+
+
+}
+
+export {
+    setGrid,
+    deleteGrid,
+    addButtons,
 }

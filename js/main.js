@@ -1,13 +1,3 @@
-import { setGrid, addButtons } from './set-dom.js'
-import { changeColorHoverSquare, resetGrid } from './events.js';
-
+import { setGrid } from './set-dom.js'
 
 setGrid()
-addButtons()
-
-
-const container = document.querySelector(".container");
-container.addEventListener("mouseover", changeColorHoverSquare, false);
-
-const resetButton = document.querySelector(".reset")
-resetButton.addEventListener("click", resetGrid);
